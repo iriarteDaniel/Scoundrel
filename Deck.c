@@ -16,3 +16,11 @@ Deck create(){
 
     return deck;
 }
+
+int add(Deck d, Card c){
+    if (d == NULL) return 0;
+    d->cards[d->size] = c;
+    d->size++;
+
+    return 1;
+}

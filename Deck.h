@@ -14,7 +14,7 @@ typedef _Deck* Deck;
 
 Deck create();
 int setDefault(Deck d);
-int add(Deck d);
+int add(Deck d, Card c);
 int take(Deck d);
 int shuffle(Deck d);
 void destroy(Deck d);
