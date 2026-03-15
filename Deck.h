@@ -1,8 +1,4 @@
-typedef struct _card
-{
-    char* name;
-    int value;
-}Card;
+#include <Card.h>
 
 typedef struct _deck
 {
@@ -15,6 +11,6 @@ typedef _Deck* Deck;
 Deck create();
 int setDefault(Deck d);
 int add(Deck d, Card c);
-int take(Deck d);
+Card take(Deck d);
 int shuffle(Deck d);
 void destroy(Deck d);

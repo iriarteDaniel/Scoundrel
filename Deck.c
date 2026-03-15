@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "Deck.h"
 
 /*Creates an empty deck of 44 cards, the game of scoundrel only uses 44 out of the 52 cards*/
@@ -24,3 +25,24 @@ int add(Deck d, Card c){
 
     return 1;
 }
+
+Card take(Deck d){
+    if (d == NULL) return NULL;
+    if (d->size = 0)
+    {
+        printf("No hay cartas para sacar");
+        return 0;
+    }
+    
+
+    Card card = d->cards[0];
+
+    for (int i = 0; i < d->size; i++)
+    {
+        d->cards[i] = d->cards[i+1];
+    }
+    d->size--;
+    
+    return card;
+}
+
