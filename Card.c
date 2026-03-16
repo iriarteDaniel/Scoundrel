@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include "Card.h"
 
-void print(Card c){
+//Shows the name of the card
+void printCard(Card c){
+    printf("\n");
     printf(c->name);
 }
