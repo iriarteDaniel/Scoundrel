@@ -21,7 +21,7 @@ Deck create(){
 // Sets a deck to the default 
 int setDefault(Deck d){
     if (d == NULL) return 0;
-    Deck temp = create();
+    Deck tempDeck = create();
 
     _Card def[44] = {
         {"H2",2,HEARTS},{"H3",3,HEARTS},{"H4",4,HEARTS},{"H5",5,HEARTS},
@@ -41,12 +41,14 @@ int setDefault(Deck d){
         {"C10",10,CLUBS},{"CJ",11,CLUBS},{"CQ",12,CLUBS},{"CK",13,CLUBS},{"CA",14,CLUBS}
     };
 
+    Card tempCard;
     for (int i = 0; i < 44; i++)
     {
-        add(temp, &def[i]);
+        tempCard = createCard(def[i]);
+        add(tempDeck, tempCard);
     }
 
-    d->cards = temp->cards;
+    d->cards = tempDeck->cards;
     d->size = DECK_SIZE;
 
     return 1;
