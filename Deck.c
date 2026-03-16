@@ -47,7 +47,7 @@ _Card take(Deck d){
     if (d == NULL) {
         return def;
     }
-    if (d->size = 0)
+    if (d->size == 0)
     {
         printf("No hay cartas para sacar");
         return def;
@@ -56,7 +56,7 @@ _Card take(Deck d){
     Card card = d->cards[0];
 
     pop(d);
-    
+
     return *card;
 }
 
