@@ -1,8 +1,15 @@
 
+#define NA 0
+#define HEARTS 1
+#define DIAMONDS 2
+#define SPADES 3
+#define CLUBS 3
+
 typedef struct _card
 {
-    char* name;
+    char name[4];
     int value;
+    int type;
 }_Card;
 
 typedef _Card* Card;

@@ -7,7 +7,7 @@ Deck create(){
     Deck deck = (Deck) malloc(sizeof(_Deck));
     if (deck == NULL) return NULL;
 
-    deck->cards = (Card*) malloc(sizeof(Card) * 44);
+    deck->cards = (Card*) malloc(sizeof(Card) * DECK_SIZE);
     if (deck->cards == NULL) {
         free(deck);
         return NULL;
@@ -18,31 +18,44 @@ Deck create(){
     return deck;
 }
 
+//Adds a card to the end of a deck, as long as it isn't full
 int add(Deck d, Card c){
     if (d == NULL) return 0;
+    if (d->size == DECK_SIZE) return 0;
+
     d->cards[d->size] = c;
     d->size++;
 
     return 1;
 }
 
-Card take(Deck d){
-    if (d == NULL) return NULL;
-    if (d->size = 0)
-    {
-        printf("No hay cartas para sacar");
-        return 0;
-    }
-    
-
-    Card card = d->cards[0];
-
+//Deletes the first card from a deck, reorganizes the deck after
+int pop(Deck d){
+    if (d == NULL) return 0;
     for (int i = 0; i < d->size; i++)
     {
         d->cards[i] = d->cards[i+1];
     }
     d->size--;
+
+    return 1;
+}
+
+_Card take(Deck d){
+    _Card def = {"NA", 0, 0};
+    if (d == NULL) {
+        return def;
+    }
+    if (d->size = 0)
+    {
+        printf("No hay cartas para sacar");
+        return def;
+    }
     
-    return card;
+    Card card = d->cards[0];
+
+    pop(d);
+    
+    return *card;
 }
 
