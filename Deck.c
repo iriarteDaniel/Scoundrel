@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 #include "Deck.h"
 
 /*Creates an empty deck of 44 cards, the game of scoundrel only uses 44 out of the 52 cards*/
@@ -74,6 +75,18 @@ int pop(Deck d){
     }
     d->size--;
 
+    return 1;
+}
+
+// Removes a card by index
+int remove(Deck d, int pos){
+    if (d == NULL) return 0;
+    for (int i = pos; i < d->size; i++)
+    {
+        d->cards[i] = d->cards[i+1];
+    }
+    d->size--;
+    
     return 1;
 }
 

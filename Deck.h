@@ -14,6 +14,7 @@ Deck create();
 int setDefault(Deck d);
 int add(Deck d, Card c);
 int pop(Deck d);
+int remove(Deck d, int pos);
 _Card take(Deck d);
 int shuffle(Deck d);
 void printDeck(Deck d);
