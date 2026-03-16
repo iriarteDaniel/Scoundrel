@@ -109,6 +109,28 @@ _Card take(Deck d){
     return *card;
 }
 
+// shuffles the array of Cards.
+int shuffle(Deck d){
+    if (d == NULL) return 0;
+    srand(time(NULL));
+
+    Deck temp = create();
+    int rnd;
+    int size = d->size;
+
+    for (int i = 0; i < size; i++)
+    {
+        rnd = rand() % d->size;
+        add(temp, d->cards[rnd]);
+        remove(d, rnd);
+    }
+    
+    d->cards = temp->cards;
+    d->size = temp->size;
+
+    return 1;
+}
+
 // Print the cards form the deck
 void printDeck(Deck d){
     if (d == NULL) {
