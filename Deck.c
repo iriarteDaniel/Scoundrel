@@ -18,6 +18,40 @@ Deck create(){
     return deck;
 }
 
+// Sets a deck to the default 
+int setDefault(Deck d){
+    if (d == NULL) return 0;
+    Deck temp = create();
+
+    _Card def[44] = {
+        {"H2",2,HEARTS},{"H3",3,HEARTS},{"H4",4,HEARTS},{"H5",5,HEARTS},
+        {"H6",6,HEARTS},{"H7",7,HEARTS},{"H8",8,HEARTS},{"H9",9,HEARTS},
+        {"H10",10,HEARTS},
+
+        {"D2",2,DIAMONDS},{"D3",3,DIAMONDS},{"D4",4,DIAMONDS},{"D5",5,DIAMONDS},
+        {"D6",6,DIAMONDS},{"D7",7,DIAMONDS},{"D8",8,DIAMONDS},{"D9",9,DIAMONDS},
+        {"D10",10,DIAMONDS},
+
+        {"S2",2,SPADES},{"S3",3,SPADES},{"S4",4,SPADES},{"S5",5,SPADES},
+        {"S6",6,SPADES},{"S7",7,SPADES},{"S8",8,SPADES},{"S9",9,SPADES},
+        {"S10",10,SPADES},{"SJ",11,SPADES},{"SQ",12,SPADES},{"SK",13,SPADES},{"SA",14,SPADES},
+
+        {"C2",2,CLUBS},{"C3",3,CLUBS},{"C4",4,CLUBS},{"C5",5,CLUBS},
+        {"C6",6,CLUBS},{"C7",7,CLUBS},{"C8",8,CLUBS},{"C9",9,CLUBS},
+        {"C10",10,CLUBS},{"CJ",11,CLUBS},{"CQ",12,CLUBS},{"CK",13,CLUBS},{"CA",14,CLUBS}
+    };
+
+    for (int i = 0; i < 44; i++)
+    {
+        add(temp, &def[i]);
+    }
+
+    d->cards = temp->cards;
+    d->size = DECK_SIZE;
+
+    return 1;
+}
+
 //Adds a card to the end of a deck, as long as it isn't full.
 int add(Deck d, Card c){
     if (d == NULL) return 0;
