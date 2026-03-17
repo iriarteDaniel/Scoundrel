@@ -128,11 +128,11 @@ void caseBlack(_Card card){
 }
 
 void win(){
-    printf("Ganaste");
+    printf("You won!");
     return;
 }
 
 void lose(){
-    printf("Perdiste");
+    printf("You lost");
     return;
 }
