@@ -51,7 +51,7 @@ void printRoom(){
     {
         printCard(&room[i]);
     }
-
+    printDeck(deck);
 }
 
 void choice(){
@@ -145,7 +145,7 @@ void run(){
     Card temp;
     for (roomSize; roomSize>0; roomSize--)
     {
-        temp = createCard(room[roomSize]);
+        temp = createCard(room[roomSize-1]);
         add(deck, temp);
     }
     restartRoom();
