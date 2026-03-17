@@ -1,17 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "Deck.h"
+#include "Game.h"
 
 int main(){
-    _Card card = {"T10", 10, CLUBS};
-    Card ptrCard = &card;
+    printf("Welcome to Scoundrel! \nStarting...");
+    init();
 
-    Deck deck = create();
-
-    add(deck, ptrCard);
-
-    printDeck(deck);
-
-    destroy(deck);
     return 0;
 }
