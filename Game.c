@@ -51,7 +51,7 @@ void printRoom(){
     {
         printCard(&room[i]);
     }
-    printDeck(deck);
+    
 }
 
 void choice(){
